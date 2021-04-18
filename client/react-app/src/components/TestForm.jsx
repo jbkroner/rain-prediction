@@ -17,8 +17,8 @@ function TestForm () {
     WindDir9am:'N',//Select
     WindDir3pm:'N',
     WindSpeed9am:'25.0',//numeric
-    Windspeed3pm:'25.0', //num
-    Humitidy9am :'50.0', //num
+    WindSpeed3pm:'25.0', //num
+    Humidity9am :'50.0', //num
     Humidity3pm :'50.0', //num
     Pressure9am:'1000.0', //num
     Pressure3pm:'1000.0', //num
@@ -30,7 +30,7 @@ function TestForm () {
     },
     onSubmit: values => {
         console.log(JSON.stringify(values));
-        fetch('http://127.0.0.1:8000/test', {
+        fetch('http://127.0.0.1:8000/', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -300,17 +300,18 @@ function TestForm () {
         value={formik.values.WindSpeed3pm}
       />
       </p>
+
       <p>
-      <label htmlFor="Humitidy9am">Humitidy 9am </label>
+      <label htmlFor="Humidity">Humitidy 9am </label>
       <input
-        id="Humitidy9am"
-        name="Humitidy9am"
+      id="Humidity9am"
+      name="Humidity9am"
         type="range"
         className="slider"
         min="0.0"
         max="100.0"
         onChange={formik.handleChange}
-        value={formik.values.Humitidy9am}
+        value={formik.values.Humidity9am}
       />
       </p>
       <p>
