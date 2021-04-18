@@ -112,7 +112,6 @@ X_train = pd.DataFrame(X_train, columns=[cols])
 X_test = pd.DataFrame(X_test, columns=[cols])
 print('done!')
 
-
 for col in X_train:
     print(col)
 

@@ -2,6 +2,7 @@ aiofiles==0.5.0
 aniso8601==7.0.0
 async-exit-stack==1.0.1
 async-generator==1.10
+category-encoders==2.2.2
 certifi==2020.12.5
 chardet==4.0.0
 click==7.1.2
@@ -21,6 +22,7 @@ MarkupSafe==1.1.1
 numpy==1.20.2
 orjson==3.5.2
 pandas==1.2.4
+patsy==0.5.1
 promise==2.3
 pydantic==1.8.1
 python-dateutil==2.8.1
@@ -34,6 +36,7 @@ scikit-learn==0.24.1
 scipy==1.6.2
 six==1.15.0
 starlette==0.13.6
+statsmodels==0.12.2
 threadpoolctl==2.1.0
 typing-extensions==3.7.4.3
 ujson==3.2.0
