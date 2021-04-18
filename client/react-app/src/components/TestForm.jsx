@@ -102,7 +102,8 @@ function TestForm () {
       <input className="range-slider"
         id="MinTemp"
         name="MinTemp"
-        type="number"
+        type="range"
+      className="slider"
         min="-8.5"
         max="33.9"
         onChange={formik.handleChange}
@@ -114,7 +115,8 @@ function TestForm () {
       <input
         id="MaxTemp"
         name="MaxTemp"
-        type="number"
+        type="range"
+        className="slider"
         min="-4.8"
         max="48.1"
         onChange={formik.handleChange}
@@ -126,7 +128,8 @@ function TestForm () {
       <input
         id="Rainfall"
         name="Rainfall"
-        type="number"
+        type="range"
+        className="slider"
         min="0.0"
         max="371.0"
         onChange={formik.handleChange}
@@ -138,11 +141,12 @@ function TestForm () {
       <input
         id="Evaporation"
         name="Evaporation"
-        type="number"
+        type="range"
+        className="slider"
         min="0.0"
         max="145.0"
        onChange={formik.handleChange}
-       value={formik.values.Sunshine}
+       value={formik.values.Evaporation}
       />
       </p>
       <p>
@@ -151,7 +155,8 @@ function TestForm () {
       <input
         id="Sunshine"
         name="Sunshine"
-        type="number"
+        type="range"
+        className="slider"
         min="0.0"
         max="14.3"
         onChange={formik.handleChange}
@@ -192,7 +197,8 @@ function TestForm () {
       <input
         id="WindGustSpeed"
         name="WindGustSpeed"
-        type="number"
+        type="range"
+        className="slider"
         min="6.0"
         max="135.0"
         onChange={formik.handleChange}
@@ -233,7 +239,8 @@ function TestForm () {
       <input
         id="WindSpeed9am"
         name="WindSpeed9am"
-        type="number"
+        type="range"
+        className="slider"
         min="0.0"
         max="130.0"
         onChange={formik.handleChange}
@@ -245,7 +252,8 @@ function TestForm () {
       <input
         id="WindSpeed3pm"
         name="WindSpeed3pm"
-        type="number"
+        type="range"
+        className="slider"
         min="0.0"
         max="87.0"
         onChange={formik.handleChange}
@@ -257,7 +265,8 @@ function TestForm () {
       <input
         id="Humitidy9am"
         name="Humitidy9am"
-        type="number"
+        type="range"
+        className="slider"
         min="0.0"
         max="100.0"
         onChange={formik.handleChange}
@@ -269,7 +278,8 @@ function TestForm () {
       <input
         id="Humidity3pm"
         name="Humidity3pm"
-        type="number"
+        type="range"
+        className="slider"
         min="0.0"
         max="100.0"
         onChange={formik.handleChange}
@@ -281,7 +291,8 @@ function TestForm () {
       <input
         id="Pressure9am"
         name="Pressure9am"
-        type="number"
+        type="range"
+        className="slider"
         min="980.5"
         max="1041.0"
         onChange={formik.handleChange}
@@ -293,7 +304,8 @@ function TestForm () {
       <input
         id="Pressure3pm"
         name="Pressure3pm"
-        type="number"
+        type="range"
+        className="slider"
         min="977.1"
         max="1039.6"
         onChange={formik.handleChange}
@@ -305,7 +317,8 @@ function TestForm () {
       <input
         id="Cloud9am"
         name="Cloud9am"
-        type="number"
+        type="range"
+        className="slider"
         min="0.0"
         max="9.0"
         onChange={formik.handleChange}
@@ -317,7 +330,8 @@ function TestForm () {
       <input
         id="Cloud3pm"
         name="Cloud3pm"
-        type="number"
+        type="range"
+        className="slider"
         min="0.0"
         max="9.0"
         onChange={formik.handleChange}
@@ -329,7 +343,8 @@ function TestForm () {
       <input
         id="Temp9am"
         name="Temp9am"
-        type="number"
+        type="range"
+        className="slider"
         min="-7.2"
         max="39.1"
         onChange={formik.handleChange}
@@ -341,7 +356,8 @@ function TestForm () {
       <input
         id="Temp3pm"
         name="Temp3pm"
-        type="number"
+        type="range"
+        className="slider"
         min="-5.4"
         max="46.7"
         onChange={formik.handleChange}
