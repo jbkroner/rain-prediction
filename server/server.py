@@ -48,9 +48,9 @@ class Sample(BaseModel):
 
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+@app.post("/")
+async def root(sample: Sample):
+    return sample
 
 @app.get("/test")
 async def test():
