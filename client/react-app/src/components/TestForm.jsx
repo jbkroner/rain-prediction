@@ -2,6 +2,7 @@ import React from 'react';
 //import ReactDOM from 'react-dom';
 import { useFormik } from 'formik';
 
+
 function TestForm () {
   const formik = useFormik({
     initialValues: {
@@ -35,19 +36,24 @@ function TestForm () {
     <h2>Pass in weather Parameters</h2>
     <form onSubmit={formik.handleSubmit}>
       <p>
-      <label htmlFor="Location">Location</label>
-      <input
-        id="Location"
+      <label htmlFor="Location">Location </label>
+      <select
         name="Location"
-        type="text"
-        onChange={formik.handleChange}
+        id="Location"
         value={formik.values.Location}
-      />
+        onChange={formik.handleChange}
+        style={{ display: 'block' }}
+      >
+        <option value="" label="Choose a City" />
+        <option value="City1" label="City1" />
+        <option value="City2" label="City2" />
+        <option value="City3" label="City3" />
+      </select>
       </p>
       
       <p>
-      <label htmlFor="MinTemp">Min Temp</label>
-      <input
+      <label htmlFor="MinTemp">Min Temp </label>
+      <section className="range-slider"
         id="MinTemp"
         name="MinTemp"
         type="text"
@@ -56,7 +62,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="MaxTemp">Max Temp</label>
+      <label htmlFor="MaxTemp">Max Temp </label>
       <input
         id="MaxTemp"
         name="MaxTemp"
@@ -66,7 +72,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="Rainfall">Rainfall</label>
+      <label htmlFor="Rainfall">Rain fall </label>
       <input
         id="Rainfall"
         name="Rainfall"
@@ -76,7 +82,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="Sunshine">Sunshine</label>
+      <label htmlFor="Sunshine">Sunshine </label>
       <input
         id="Sunshine"
         name="Sunshine"
@@ -86,17 +92,36 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="Rainfall">WindGustDir</label>
-      <input
-        id="WindGustDir"
+      <label htmlFor="WindGustDir">Wind Gust Direction </label>
+      <select
         name="WindGustDir"
-        type="text"
-        onChange={formik.handleChange}
+        id="WindGustDir"
         value={formik.values.WindGustDir}
-      />
+        onChange={formik.handleChange}
+        style={{ display: 'block' }}
+      >
+        <option value="" label="Wind Direction" />
+        <option value="E" label="E" />
+        <option value="ENE" label="ENE" />
+        <option value="ESE" label="ESE" />
+        <option value="N" label="N" />
+        <option value="NE" label="NE" />
+        <option value="NNE" label="NNE" />
+        <option value="NNW" label="NNW" />
+        <option value="NW" label="NW" />
+        <option value="S" label="S" />
+        <option value="SE" label="SE" />
+        <option value="SSE" label="SSE" />
+        <option value="SSW" label="SSW" />
+        <option value="SW" label="SW" />
+        <option value="W" label="W" />
+        <option value="WNW" label="WNW" />
+        <option value="WSW" label="WSW" />
+
+      </select>
       </p>
       <p>
-      <label htmlFor="WindGustSpeed">WindGustSpeed</label>
+      <label htmlFor="WindGustSpeed">Wind Gust Speed </label>
       <input
         id="WindGustSpeed"
         name="WindGustSpeed"
@@ -106,17 +131,36 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="WindDir9am">WindDir9am</label>
-      <input
-        id="WindDir9am"
+      <label htmlFor="WindDir9am">Wind Direction 9am </label>
+      <select
         name="WindDir9am"
-        type="text"
-        onChange={formik.handleChange}
+        id="WindDir9am"
         value={formik.values.WindDir9am}
-      />
+        onChange={formik.handleChange}
+        style={{ display: 'block' }}
+      >
+        <option value="" label="Wind Direction" />
+        <option value="E" label="E" />
+        <option value="ENE" label="ENE" />
+        <option value="ESE" label="ESE" />
+        <option value="N" label="N" />
+        <option value="NE" label="NE" />
+        <option value="NNE" label="NNE" />
+        <option value="NNW" label="NNW" />
+        <option value="NW" label="NW" />
+        <option value="S" label="S" />
+        <option value="SE" label="SE" />
+        <option value="SSE" label="SSE" />
+        <option value="SSW" label="SSW" />
+        <option value="SW" label="SW" />
+        <option value="W" label="W" />
+        <option value="WNW" label="WNW" />
+        <option value="WSW" label="WSW" />
+
+      </select>
       </p>
       <p>
-      <label htmlFor="WindSpeed9pm">WindSpeed9pm</label>
+      <label htmlFor="WindSpeed9pm">Wind Speed 9pm </label>
       <input
         id="WindSpeed9pm"
         name="WindSpeed9pm"
@@ -126,7 +170,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="WindSpeed9am">WindSpeed9am</label>
+      <label htmlFor="WindSpeed9am">Wind Speed 9am </label>
       <input
         id="WindSpeed9am"
         name="WindSpeed9am"
@@ -136,7 +180,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="Humitidy9am">Humitidy9am</label>
+      <label htmlFor="Humitidy9am">Humitidy 9am </label>
       <input
         id="Humitidy9am"
         name="Humitidy9am"
@@ -146,7 +190,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="Humidity3pm">Humidity3pm</label>
+      <label htmlFor="Humidity3pm">Humidity 3pm </label>
       <input
         id="Humidity3pm"
         name="Humidity3pm"
@@ -156,7 +200,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="Pressure9am">Pressure9am</label>
+      <label htmlFor="Pressure9am">Pressure 9am </label>
       <input
         id="Pressure9am"
         name="Pressure9am"
@@ -166,7 +210,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="Pressure3pm">Pressure3pm</label>
+      <label htmlFor="Pressure3pm">Pressure 3 pm </label>
       <input
         id="Pressure3pm"
         name="Pressure3pm"
@@ -176,7 +220,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="Cloud9am">Cloud9am</label>
+      <label htmlFor="Cloud9am">Cloud 9 am </label>
       <input
         id="Cloud9am"
         name="Cloud9am"
@@ -186,7 +230,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="Cloud3pm">Cloud3pm</label>
+      <label htmlFor="Cloud3pm">Cloud 3 pm </label>
       <input
         id="Cloud3pm"
         name="Cloud3pm"
@@ -196,7 +240,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="Temp9am">Temp9am</label>
+      <label htmlFor="Temp9am">Temp 9 am </label>
       <input
         id="Temp9am"
         name="Temp9am"
@@ -206,7 +250,7 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="Temp3pm">Temp3pm</label>
+      <label htmlFor="Temp3pm">Temp 3 pm </label>
       <input
         id="Temp3pm"
         name="Temp3pm"
@@ -216,21 +260,24 @@ function TestForm () {
       />
       </p>
       <p>
-      <label htmlFor="RainToday">Rain Today</label>
-      <input
-        id="RainToday"
+      <label htmlFor="RainToday">Rain Today </label>
+      <select
         name="RainToday"
-        type="text"
-        onChange={formik.handleChange}
+        id="RainToday"
         value={formik.values.RainToday}
-      />
+        onChange={formik.handleChange}
+        style={{ display: 'block' }}
+      >
+        <option value="" label="Y/N" />
+        <option value="Yes" label="Yes" />
+        <option value="No" label="No" />
+      </select>
       </p>
-      <button type="submit">Submit</button>
+      <button type="submit">Submit </button>
     </form>
     </div>
   );
 }
-
 
 //Not sure about exporting this to the index.js file
 export default TestForm;
