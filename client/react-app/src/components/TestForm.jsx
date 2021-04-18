@@ -11,10 +11,10 @@ function TestForm () {
     MaxTemp:'',//num
     Rainfall:'',//num
     Sunshine:'',//num
+    Evaporation:'',
     WindGustDir:'', //Select
     WindGustSpeed:'', //numeric
     WindDir9am:'',//Select
-    WindSpeed9pm:'',//Numeric
     WindSpeed9am:'',//numeric
     Windspeed3pm:'', //num
     Humitidy9am :'', //num
@@ -45,18 +45,66 @@ function TestForm () {
         style={{ display: 'block' }}
       >
         <option value="" label="Choose a City" />
-        <option value="City1" label="City1" />
-        <option value="City2" label="City2" />
-        <option value="City3" label="City3" />
+        <option value='Adelaide' label='Adelaide'/>
+        <option value='Albany' label='Albany' />
+        <option value='Albury' label='Albury' />
+        <option value='AliceSprings' label='Alice Springs'/>
+        <option value='BadgerysCreek' label='Badgerys Creek' />
+        <option value='Ballarat'label='Ballarat' />
+        <option value='Bendigo' label='Bendigo'/>
+        <option value='Brisbane' label='Brisbane' />
+        <option value='Cairns' label='Cairns' />
+        <option value='Canberra' label='Canberra'/>
+        <option value='Cobar' label='Cobar' />
+        <option value='CoffsHarbour' label='Coffs Harbour' />
+        <option value='Dartmoor' label='Dartmoor'/>
+        <option value='Darwin' label='Darwin'/>
+        <option value='GoldCoast' label='Gold Coast' />
+        <option value='Hobart' label='Hobart'/>
+        <option value='Katherine' label='Katherine' />
+        <option value='Launceston' label='Launceston' />
+        <option value='Melbourne' label='Melbourne'/>
+        <option value='MelbourneAirport' label='Melbourne Airport' />
+        <option value='Mildura' label='Mildura' />
+        <option value='Moree' label='Moree'/>
+        <option value='MountGambier' label='Mount Gambier' />
+        <option value='MountGinini'label='Mount Ginini' />
+        <option value='Newcastle' label='Newcastle'/>
+        <option value='Nhil' label='Nhil'/>
+        <option value='NorahHead' label='Norah Head' />
+        <option value='NorfolkIsland' label='Norfolk Island'/>
+        <option value='Nuriootpa' label='Nuriootpa' />
+        <option value='PearceRAAF' label='Pearce RAAF' />
+        <option value='Penrith' label='Penrith'/>
+        <option value='Perth' label='Perth'/>
+        <option value='PerthAirport' label='Perth Airport' />
+        <option value='Portland' label='Portland'/>
+        <option value='Richmond' label='Richmond' />
+        <option value='Sale' label='Sale' />
+        <option value='SalmonGums' label='Salmon Gums' />
+        <option value='Sydney' label='Sydney'/>
+        <option value='SydneyAirport' label='Sydney Airport'/>
+        <option value='Townsville' label='Townsville' />
+        <option value='Tuggeranong' label='Tuggeranong'/>
+        <option value='Uluru' label='Uluru' />
+        <option value='WaggaWagga' label='WaggaWagga' />
+        <option value='Walpole' label='Walpole'/>
+        <option value='Watsonia' label='Watsonia' />
+        <option value='Williamtown' label='Williamtown' />
+        <option value='Witchcliffe' label='Witchcliffe'/>
+        <option value='Wollongong' label='Wollongong' />
+        <option value='Woomera' label='Woomera' />
       </select>
       </p>
       
       <p>
       <label htmlFor="MinTemp">Min Temp </label>
-      <section className="range-slider"
+      <input className="range-slider"
         id="MinTemp"
         name="MinTemp"
-        type="text"
+        type="number"
+        min="-8.5"
+        max="33.9"
         onChange={formik.handleChange}
         value={formik.values.MinTemp}
       />
@@ -66,7 +114,9 @@ function TestForm () {
       <input
         id="MaxTemp"
         name="MaxTemp"
-        type="text"
+        type="number"
+        min="-4.8"
+        max="48.1"
         onChange={formik.handleChange}
         value={formik.values.MaxTemp}
       />
@@ -76,17 +126,34 @@ function TestForm () {
       <input
         id="Rainfall"
         name="Rainfall"
-        type="text"
+        type="number"
+        min="0.0"
+        max="371.0"
         onChange={formik.handleChange}
         value={formik.values.Rainfall}
       />
       </p>
       <p>
+      <label htmlFor="Evaporation">Evaporation </label>
+      <input
+        id="Evaporation"
+        name="Evaporation"
+        type="number"
+        min="0.0"
+        max="145.0"
+       onChange={formik.handleChange}
+       value={formik.values.Sunshine}
+      />
+      </p>
+      <p>
+
       <label htmlFor="Sunshine">Sunshine </label>
       <input
         id="Sunshine"
         name="Sunshine"
-        type="text"
+        type="number"
+        min="0.0"
+        max="14.3"
         onChange={formik.handleChange}
         value={formik.values.Sunshine}
       />
@@ -125,7 +192,9 @@ function TestForm () {
       <input
         id="WindGustSpeed"
         name="WindGustSpeed"
-        type="text"
+        type="number"
+        min="6.0"
+        max="135.0"
         onChange={formik.handleChange}
         value={formik.values.WindGustSpeed}
       />
@@ -160,23 +229,27 @@ function TestForm () {
       </select>
       </p>
       <p>
-      <label htmlFor="WindSpeed9pm">Wind Speed 9pm </label>
-      <input
-        id="WindSpeed9pm"
-        name="WindSpeed9pm"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.WindSpeed9pm}
-      />
-      </p>
-      <p>
       <label htmlFor="WindSpeed9am">Wind Speed 9am </label>
       <input
         id="WindSpeed9am"
         name="WindSpeed9am"
-        type="text"
+        type="number"
+        min="0.0"
+        max="130.0"
         onChange={formik.handleChange}
         value={formik.values.WindSpeed9am}
+      />
+      </p>
+      <p>
+      <label htmlFor="WindSpeed3pm">Wind Speed 3pm </label>
+      <input
+        id="WindSpeed3pm"
+        name="WindSpeed3pm"
+        type="number"
+        min="0.0"
+        max="87.0"
+        onChange={formik.handleChange}
+        value={formik.values.WindSpeed3pm}
       />
       </p>
       <p>
@@ -184,7 +257,9 @@ function TestForm () {
       <input
         id="Humitidy9am"
         name="Humitidy9am"
-        type="text"
+        type="number"
+        min="0.0"
+        max="100.0"
         onChange={formik.handleChange}
         value={formik.values.Humitidy9am}
       />
@@ -194,7 +269,9 @@ function TestForm () {
       <input
         id="Humidity3pm"
         name="Humidity3pm"
-        type="text"
+        type="number"
+        min="0.0"
+        max="100.0"
         onChange={formik.handleChange}
         value={formik.values.Humidity3pm}
       />
@@ -204,7 +281,9 @@ function TestForm () {
       <input
         id="Pressure9am"
         name="Pressure9am"
-        type="text"
+        type="number"
+        min="980.5"
+        max="1041.0"
         onChange={formik.handleChange}
         value={formik.values.Pressure9am}
       />
@@ -214,7 +293,9 @@ function TestForm () {
       <input
         id="Pressure3pm"
         name="Pressure3pm"
-        type="text"
+        type="number"
+        min="977.1"
+        max="1039.6"
         onChange={formik.handleChange}
         value={formik.values.Pressure3pm}
       />
@@ -224,7 +305,9 @@ function TestForm () {
       <input
         id="Cloud9am"
         name="Cloud9am"
-        type="text"
+        type="number"
+        min="0.0"
+        max="9.0"
         onChange={formik.handleChange}
         value={formik.values.Cloud9am}
       />
@@ -234,7 +317,9 @@ function TestForm () {
       <input
         id="Cloud3pm"
         name="Cloud3pm"
-        type="text"
+        type="number"
+        min="0.0"
+        max="9.0"
         onChange={formik.handleChange}
         value={formik.values.Cloud3pm}
       />
@@ -244,7 +329,9 @@ function TestForm () {
       <input
         id="Temp9am"
         name="Temp9am"
-        type="text"
+        type="number"
+        min="-7.2"
+        max="39.1"
         onChange={formik.handleChange}
         value={formik.values.Temp9am}
       />
@@ -254,7 +341,9 @@ function TestForm () {
       <input
         id="Temp3pm"
         name="Temp3pm"
-        type="text"
+        type="number"
+        min="-5.4"
+        max="46.7"
         onChange={formik.handleChange}
         value={formik.values.Temp3pm}
       />
