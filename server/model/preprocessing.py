@@ -50,6 +50,12 @@ for df1 in [X_train, X_test]:
         df1[col].fillna(col_median, inplace=True)
 print('done')
 
+# min / max utility
+#for col in numerical:
+#    min = X_train[col].min()
+#    max = X_train[col].max()
+#    print(col + 'max -> ' + str(max) + ' min -> ' + str(min))
+
 # feature engineering missing catergorical data
 print('feature engineering missing catergorical data...', end="")
 for df2 in [X_train, X_test]:
