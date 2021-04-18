@@ -112,10 +112,15 @@ X_train = pd.DataFrame(X_train, columns=[cols])
 X_test = pd.DataFrame(X_test, columns=[cols])
 print('done!')
 
-print('saving cleaned data...', end="")
-X_train.to_csv('X_train_lite.csv')
-X_test.to_csv('X_test_lite.csv')
-y_train.to_csv('y_train_lite.csv')
-y_test.to_csv('y_test_lite.csv')
-print('done!')
+
+for col in X_train:
+    print(col)
+
+
+#print('saving cleaned data...', end="")
+#X_train.to_csv('X_train_lite.csv')
+#X_test.to_csv('X_test_lite.csv')
+#y_train.to_csv('y_train_lite.csv')
+#y_test.to_csv('y_test_lite.csv')
+#print('done!')
 
