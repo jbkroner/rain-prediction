@@ -1,4 +1,12 @@
 # `rain-prediction`
+### Note for Hackathon judges:
+These files highlight the core functionality of our project!
+- [react form template](https://github.com/jbkroner/rain-prediction/blob/master/client/react-app/src/components/TestForm.jsx)
+- [server / api driver](https://github.com/jbkroner/rain-prediction/blob/master/server/server.py)
+- [model pre-processing](https://github.com/jbkroner/rain-prediction/blob/master/server/model/preprocessing.py)
+- [model training and testing](https://github.com/jbkroner/rain-prediction/blob/master/server/model/train.py)
+
+
 ### Inspiration
 We were motivated to build this project for two reasons.  First, it was a project that everyone can find some utility in.  Farmers, pilots, and even surfers rely on weather data for safety, efficiency, and fun.  
 
