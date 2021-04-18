@@ -13,7 +13,7 @@ function TestForm () {
     Sunshine:'8.0',//num
     Evaporation:'75.0',
     WindGustDir:'N', //Select
-    WindGustSpeed:'', //numeric
+    WindGustSpeed:'75.0', //numeric
     WindDir9am:'N',//Select
     WindDir3pm:'N',
     WindSpeed9am:'25.0',//numeric
@@ -24,18 +24,21 @@ function TestForm () {
     Pressure3pm:'1000.0', //num
     Cloud9am:'4.5', //num
     Cloud3pm:'4.5', //num
-    Temp9am:'30', //num
-    Temp3pm:'30', //num
+    Temp9am:'30.0', //num
+    Temp3pm:'30.0', //num
     RainToday:'No'//Select
     },
     onSubmit: values => {
         console.log(JSON.stringify(values));
-
-        const payload = {
+        fetch('http://127.0.0.1:8000/test', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(values)
-        }
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(values) 
+        })
+
     },
   });
   return (
@@ -49,6 +52,7 @@ function TestForm () {
         id="Location"
         value={formik.values.Location}
         onChange={formik.handleChange}
+        value={formik.values.Location}
         style={{ display: 'block' }}
       >
         <option value="" label="Choose a City" />
