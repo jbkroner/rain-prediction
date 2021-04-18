@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from typing import Optional
 from pydantic import BaseModel
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
+
 app = FastAPI()
 
 origins = ["*"]
@@ -194,8 +196,8 @@ async def predict(sample: Sample):
             }
 
     RainToday = {
-            'Yes':[0.0],
-            'No':[0.0]
+            'RainToday_0':[0.0],
+            'RainToday_1':[0.0]
             }
     
     # set encoder value to 1
@@ -203,8 +205,12 @@ async def predict(sample: Sample):
     WindGustDir.update({sample.WindGustDir:1.0})
     WindDir9am.update({sample.WindDir9am:1.0})
     WindDir3pm.update({sample.WindDir3pm:1.0})    
-    RainToday.update({sample.RainToday:1.0})
-    
+    if sample.RainToday == 0.0:
+        RainToday.update({'RainToday_0':0})
+    else:
+        RainToday.update({'RainToday_1':0})
+
+
     # convert to DataFrame
     location_frame = pd.DataFrame(location) 
     WindGustDir_frame = pd.DataFrame(WindGustDir)
@@ -238,13 +244,22 @@ async def predict(sample: Sample):
     data['Temp9am'] = pd.to_numeric(data['Temp9am'])
     data['Temp3pm'] = pd.to_numeric(data['Temp3pm'])
 
+    #data['Cloud3pm'] = data['Cloud3pm'].as_type(float)
+    #data['Cloud9am'] = data['Cloud9am'].as_type(float)
 
-    print(data.dtypes)
+
+    data.pop('RainToday')
+
     # normalize data
-    #cols = data.columns    
-    #scaler = MinMaxScaler()
-    #data = scaler.fit_transform(data)
-    #data = pd.DataFrame(data, columns=[cols])
+    cols = data.columns    
+    scaler = MinMaxScaler()
+    data = scaler.fit_transform(data)
+    data = pd.DataFrame(data, columns=[cols])
+    #t = model.predict(data)
 
-    return sample
+
+    # spoof data for test 
+    
+    response = {'results':'True'}
+    return JSONResponse(response)
     
