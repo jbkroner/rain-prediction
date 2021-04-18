@@ -6,29 +6,30 @@ import { useFormik } from 'formik';
 function TestForm () {
   const formik = useFormik({
     initialValues: {
-    Location :'',//select
-    MinTemp:'',//numeric
-    MaxTemp:'',//num
-    Rainfall:'',//num
-    Sunshine:'',//num
-    Evaporation:'',
-    WindGustDir:'', //Select
+    Location :'Adelaide',//select
+    MinTemp:'20.0',//numeric
+    MaxTemp:'20.0',//num
+    Rainfall:'100.0',//num
+    Sunshine:'8.0',//num
+    Evaporation:'75.0',
+    WindGustDir:'N', //Select
     WindGustSpeed:'', //numeric
-    WindDir9am:'',//Select
-    WindSpeed9am:'',//numeric
-    Windspeed3pm:'', //num
-    Humitidy9am :'', //num
-    Humidity3pm :'', //num
-    Pressure9am:'', //num
-    Pressure3pm:'', //num
-    Cloud9am:'', //num
-    Cloud3pm:'', //num
-    Temp9am:'', //num
-    Temp3pm:'', //num
-    RainToday:''//Select
+    WindDir9am:'N',//Select
+    WindDir3pm:'N',
+    WindSpeed9am:'25.0',//numeric
+    Windspeed3pm:'25.0', //num
+    Humitidy9am :'50.0', //num
+    Humidity3pm :'50.0', //num
+    Pressure9am:'1000.0', //num
+    Pressure3pm:'1000.0', //num
+    Cloud9am:'4.5', //num
+    Cloud3pm:'4.5', //num
+    Temp9am:'30', //num
+    Temp3pm:'30', //num
+    RainToday:'No'//Select
     },
     onSubmit: values => {
-      alert(JSON.stringify(values));
+        console.log(JSON.stringify(values));
     },
   });
   return (
@@ -234,6 +235,35 @@ function TestForm () {
 
       </select>
       </p>
+      <p>
+      <label htmlFor="WindDir3pm">Wind Direction 3pm </label>
+      <select
+        name="WindDir3pm"
+        id="WindDir3pm"
+        value={formik.values.WindDir3pm}
+        onChange={formik.handleChange}
+        style={{ display: 'block' }}
+      >
+        <option value="" label="Wind Direction" />
+        <option value="E" label="E" />
+        <option value="ENE" label="ENE" />
+        <option value="ESE" label="ESE" />
+        <option value="N" label="N" />
+        <option value="NE" label="NE" />
+        <option value="NNE" label="NNE" />
+        <option value="NNW" label="NNW" />
+        <option value="NW" label="NW" />
+        <option value="S" label="S" />
+        <option value="SE" label="SE" />
+        <option value="SSE" label="SSE" />
+        <option value="SSW" label="SSW" />
+        <option value="SW" label="SW" />
+        <option value="W" label="W" />
+        <option value="WNW" label="WNW" />
+        <option value="WSW" label="WSW" />
+      </select>
+      </p>
+
       <p>
       <label htmlFor="WindSpeed9am">Wind Speed 9am </label>
       <input
