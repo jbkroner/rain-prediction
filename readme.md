@@ -4,6 +4,9 @@
 The front-end of this project is built with react.  The api was built out with fast-api.  The model was trained and predictions are performed using sklearn.  
 
 ## run this project
+You need to run the client AND the server for this project to work!
+
+
 ### client
 First, make sure you have Node and npm installed. 
 
