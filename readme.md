@@ -6,6 +6,8 @@ These files highlight the core functionality of our project!
 - [model pre-processing](https://github.com/jbkroner/rain-prediction/blob/master/server/model/preprocessing.py)
 - [model training and testing](https://github.com/jbkroner/rain-prediction/blob/master/server/model/train.py)
 
+You can view our video presentation [here](https://studio.youtube.com/video/uyzzd4K1ioQ/)
+
 
 ### Inspiration
 We were motivated to build this project for two reasons.  First, it was a project that everyone can find some utility in.  Farmers, pilots, and even surfers rely on weather data for safety, efficiency, and fun.  
