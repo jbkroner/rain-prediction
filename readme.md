@@ -1,13 +1,23 @@
+# rain-prediction
+`rain-prediciton` as a simple web app that helps the user figure out wether or not it is going to rain tomorrow.  We used a dataset of Australian meteorological data and machine learning to train a model to make these classificaitons.  The user can enter in their measurments and receive a prediction!
 
+The front-end of this project is built with react.  The api was built out with fast-api.  The model was trained and predictions are performed using sklearn.  
 
-## SERVER
-This section will guide you on setting up and running the server portion of this project.  It is based on Django, a python web framework. It's purpose is to provide an interface between the client app (react) and the model (scikit-learn).
+## run this project
+### client
+First, make sure you have Node and npm installed. 
 
-### Running the django server
-After you have cloned this repo, cd into the `server` directory. 
+- Clone the repo
+- CD into `client/react-app`
+- run `$ npm install`
+- run `$ npm start`.
 
-Launch the python virtual enviroment with `$ source venv/bin/activate`
-
-Install the dependencies with `$ pip3 install -r requirements.txt`
-
-Run the server with `$ python3 manage.py runserver`
+### server
+First, make sure that you have python3 and pip3 installed. 
+- Clone the repo
+- CD into `server`. 
+- Create a new python `venv`:
+  - run `$ python3 -m venv venv`
+  - launch the venv with `$ source venv/bin/activate`
+- Install depdencies with `$ pip3 install requirements.txt`
+- Launch the server with `$ uvicorn server:app --reload`
