@@ -1,4 +1,7 @@
 # `rain-prediction`
+
+*update*: 🎉 This project won the 'Intelligent Systems in Geoscience' Award sponsored by (IS-GEO)[https://is-geo.org/]! 🎉
+
 ### Note for Hackathon judges:
 These files highlight the core functionality of our project!
 - [react form template](https://github.com/jbkroner/rain-prediction/blob/master/client/react-app/src/components/TestForm.jsx)
